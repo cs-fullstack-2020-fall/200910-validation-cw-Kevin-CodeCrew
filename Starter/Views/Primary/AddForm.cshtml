@@ -1,0 +1,47 @@
+@model Starter.Models.ClubMemberModel
+
+@* display form *@
+<h1>New Club Member Form</h1>
+
+@if (ViewData["errors"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewData["errors"]
+    </div>
+}
+
+@using (@Html.BeginForm("AddClubMember", "Primary"))
+{
+    @Html.ValidationSummary()
+    <div class="form-group">
+        @Html.LabelFor(clubMember => clubMember.nickName)
+        @Html.TextBoxFor(clubMember => clubMember.nickName, new { @class="form-control" })
+        @Html.ValidationMessageFor(clubMember => clubMember.nickName)
+    </div>    
+    <div class="form-group">
+        @Html.LabelFor(clubMember => clubMember.firstName)
+        @Html.TextBoxFor(clubMember => clubMember.firstName, new { @class="form-control" })
+        @Html.ValidationMessageFor(clubMember => clubMember.firstName)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(clubMember => clubMember.lastName)
+        @Html.TextBoxFor(clubMember => clubMember.lastName, new { @class="form-control" })
+        @Html.ValidationMessageFor(clubMember => clubMember.lastName)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(clubMember => clubMember.clubRole)
+        @Html.TextBoxFor(clubMember => clubMember.clubRole, new { @class="form-control" })
+        @Html.ValidationMessageFor(clubMember => clubMember.clubRole)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(clubMember => clubMember.email)
+        @Html.TextBoxFor(clubMember => clubMember.email, new { @class="form-control" })
+        @Html.ValidationMessageFor(clubMember => clubMember.email)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(clubMember => clubMember.phone)
+        @Html.TextBoxFor(clubMember => clubMember.phone, new { @class="form-control" })
+        @Html.ValidationMessageFor(clubMember => clubMember.phone)
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+} 

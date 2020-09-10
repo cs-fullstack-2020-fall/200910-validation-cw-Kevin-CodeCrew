@@ -1,0 +1,30 @@
+@model Starter.Models.ClubMemberModel
+<h1>View One</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nickname</th>
+            <th scope="col">Name</th>
+            <th scope="col">Role</th>
+            <th scope="col">Email</th> 
+            <th scope="col">Phone</th> 
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">@Model.id</th>
+            <td><a asp-area="" asp-controller="Primary" asp-action="ViewOne" asp-route-id ="@Model.id">@Model.nickName</a> </td>
+            <td>@Model.firstName @Model.lastName</td>
+            <td>@Model.clubRole</td>
+            <td>@Model.email</td>
+            <td>@Model.phone</td>
+        </tr>   
+    </tbody>
+</table>
+<a asp-area="" asp-controller="Primary" asp-action="EditForm" asp-route-id = "@Model.id">
+    <button class="btn btn-primary">Edit</button>
+</a>
+<a asp-area="" asp-controller="Primary" asp-action="DeleteClubMember" asp-route-id = "@Model.id">
+    <button class="btn btn-danger">Delete</button>
+</a>

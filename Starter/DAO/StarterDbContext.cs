@@ -8,5 +8,6 @@ namespace Starter.DAO
         {
         }
         // add db set(s)
+        public DbSet<ClubMemberModel> clubMembers {get;set;}
     }
 }
